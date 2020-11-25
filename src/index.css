@@ -11,3 +11,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.news {
+
+}
+
+.news__main {
+  margin: 70px 0 0 20px;
+}
+
+.news__header {
+
+}
+
+.news__list {
+  margin: 70px 0 0 20px;
+}
+
+
+
