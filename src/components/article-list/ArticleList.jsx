@@ -120,8 +120,10 @@ class ArticleList extends React.Component {
 }
 const mapStateToProps = state => {
   const user = state.auth.user
+  const filter = state.filterArticle
   return {
-    articles: state.article.articles.filter(article => article.title.includes(state.filterArticle)),
+    articles: state.article.articles
+      .filter(a => a.title.includes(filter) || a.text.includes(filter) || a.createdDate.includes(filter)),
     isUser: user ? (['employee'].indexOf(user.role) !== -1) : false,
     isAdmin: user ? (['admin'].indexOf(user.role) !== -1) : false,
   }
