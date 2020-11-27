@@ -17,10 +17,10 @@ class Header extends React.Component {
           <div className="collapse navbar-collapse">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <NavLink to="/" className="nav-link">Главная</NavLink>
+                <NavLink exact to="/" className="nav-link" activeClassName="active">Главная</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="/news" className="nav-link">Новости</NavLink>
+                <NavLink to="/news" className="nav-link" activeClassName="active">Новости</NavLink>
               </li>
               <li className="nav-item">
                 {
