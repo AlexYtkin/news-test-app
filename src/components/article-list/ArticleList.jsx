@@ -63,6 +63,7 @@ class ArticleList extends React.Component {
             <Col md={3}>
               <Button
                 color="primary"
+                onClick={this.findArticle}
               >
                 Найти
               </Button>

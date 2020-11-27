@@ -6,7 +6,7 @@ const Article =
   return(
     <div className="article">
       <Row>
-        <Col>
+        <Col className="title">
           <h2>{title}</h2>
         </Col>
         <Row>
