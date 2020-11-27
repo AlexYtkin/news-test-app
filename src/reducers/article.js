@@ -1,15 +1,15 @@
-import {FETCH_ARTICLE_TYPES} from '../constants/types'
+import {
+  FETCH_ARTICLE_TYPES,
+  ADD_ARTICLE,
+  REMOVE_ARTICLE,
+  APPROVE_ARTICLE
+} from '../constants/types'
+import {initArticles} from '../constants/iinitArticles'
 
 const articles = JSON.parse(localStorage.getItem('articles'));
 
-const news = {
-  title: '',
-  text: '',
-  createdDate: new Date().toLocaleDateString()
-}
-
 const initialState = {
-  articles: articles || [],
+  articles: articles || initArticles,
   error: null,
   loading: null
 }
@@ -22,7 +22,7 @@ function article(state = initialState, action) {
         loading: true,
         error: null
       };
-    case FETCH_ARTICLE_TYPES.SUCCESS:
+    case FETCH_ARTICLE_TYPES.RESULT:
       return {
         ...state,
         loading: false,
@@ -35,6 +35,22 @@ function article(state = initialState, action) {
         loading: false,
         error: action.error
       };
+    case ADD_ARTICLE:
+      return {
+        ...state,
+        loading: false,
+        articles: [action.data, ...state.articles]
+      }
+    case REMOVE_ARTICLE:
+      return {
+        ...state,
+        articles: state.articles.filter(article => article.id !== action.data)
+      }
+    case APPROVE_ARTICLE:
+      return {
+        ...state,
+        articles: state.articles.map(article => article.id === action.data ? { ...article, approved: true} : article)
+      }
     default:
       return state;
   }

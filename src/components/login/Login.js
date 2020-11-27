@@ -1,8 +1,18 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {fetchLoginRequest} from '../../actions/login'
-import { Button, Col, FormGroup, Modal, ModalBody, Row } from 'reactstrap'
-import {Label, Input} from 'reactstrap'
+import {fetchLoginRequest} from '../../actions/auth/login'
+import {
+  Button,
+  Col,
+  FormGroup,
+  Modal,
+  ModalBody,
+  Row,
+  FormFeedback,
+  Label,
+  Input,
+  Alert
+} from 'reactstrap'
 
 class Login extends Component {
   state={
@@ -36,8 +46,10 @@ class Login extends Component {
     const {
       show,
       className,
-      toggle
+      toggle,
+      error
     } = this.props;
+    console.log("error", error)
     const {
       name,
       password
@@ -84,6 +96,7 @@ class Login extends Component {
                     value={password}
                     onChange={this.handleInputChange}
                   />
+                  <FormFeedback invalid>{error}</FormFeedback>
                 </FormGroup>
               </Col>
             </Row>
@@ -108,6 +121,15 @@ class Login extends Component {
                     onClick={toggle}
                   >Отмена</Button>
                 </FormGroup>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                { error &&
+                <Alert color="danger">
+                  {error}
+                </Alert>
+                }
               </Col>
             </Row>
           </ModalBody>

@@ -1,7 +1,7 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
 import {connect} from 'react-redux'
-import {fetchLogoutRequest} from '../../actions/logout'
+import {fetchLogoutRequest} from '../../actions/auth/logout'
 
 class Header extends React.Component {
   render() {

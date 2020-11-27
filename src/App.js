@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import Header from './components/header/Header'
 import Login from './components/login/Login'
 import Main from './components/main/Main'
-import NewsList from './components/news-list/NewsList'
+import ArticleList from './components/article-list/ArticleList'
 
 class App extends React.Component {
   state={show: false}
@@ -23,7 +23,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="news">
         <BrowserRouter>
           <Login
             show={this.state.show}
@@ -32,10 +32,12 @@ class App extends React.Component {
           <Header
             toggle={this.toggle}
           />
-          <Switch>
-            <Route exact path="/" component={Main} />
-            <Route path="/news" component={NewsList} />
-          </Switch>
+          <div className="container">
+            <Switch>
+              <Route exact path="/" component={Main} />
+              <Route path="/news" component={ArticleList} />
+            </Switch>
+          </div>
         </BrowserRouter>
       </div>
     )

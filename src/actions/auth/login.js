@@ -1,7 +1,7 @@
 import {
   FETCH_LOGIN_TYPES,
   CLEAR_LOGIN_ERROR
-} from '../constants/types'
+} from '../../constants/types'
 
 export function fetchLoginRequest(params){
   return {

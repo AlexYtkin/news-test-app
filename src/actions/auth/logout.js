@@ -1,4 +1,4 @@
-import { FETCH_LOGOUT_TYPES } from '../constants/types'
+import { FETCH_LOGOUT_TYPES } from '../../constants/types'
 
 export function fetchLogoutRequest(params){
   return {
