@@ -15,6 +15,7 @@ const AddArticle = ({title, text, addArticle, handleInputChange}) => {
             type="text"
             name="title"
             value={title}
+            placeholder="Название"
             onChange={handleInputChange}
           />
         </Col>
@@ -25,6 +26,7 @@ const AddArticle = ({title, text, addArticle, handleInputChange}) => {
             type="textarea"
             name="text"
             value={text}
+            placeholder="Текст"
             onChange={handleInputChange}
           />
         </Col>

@@ -5,21 +5,15 @@ const Article =
   ({title, text, createdDate, removeArticle, isAdmin, approveArticle, approved}) => {
   return(
     <div className="article">
-      <Row>
-        <Col className="title">
-          <h2>{title}</h2>
-        </Col>
-        <Row>
-          <Col>
-            <p>{text}</p>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <p>{createdDate}</p>
-          </Col>
-        </Row>
-      </Row>
+      <div>
+        <h2>{title}</h2>
+      </div>
+      <div>
+        <p>{text}</p>
+      </div>
+      <div>
+        <p>{createdDate}</p>
+      </div>
       { isAdmin &&
         <Row>
           <Col>
